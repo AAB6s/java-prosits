@@ -1,4 +1,4 @@
-# Java Prosit 2 – Zoo Management
+# Java Prosit 3 – Zoo Management
 
 ![Java](https://img.shields.io/badge/Java-JDK%2017-orange)
 
@@ -38,7 +38,7 @@ javac -version
 
 ```bash
 cd src
-javac Animal.java Zoo.java Main.java
+javac *.java
 java Main
 ```
 
