@@ -1,4 +1,4 @@
-# Java Prosit 5 – Zoo Management
+# Java Prosit 6 – Zoo Management
 
 ![Java](https://img.shields.io/badge/Java-JDK%2017-orange)
 
