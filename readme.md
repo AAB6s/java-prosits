@@ -1,4 +1,4 @@
-# Java Prosit 3 – Zoo Management
+# Java Prosit 4 – Zoo Management
 
 ![Java](https://img.shields.io/badge/Java-JDK%2017-orange)
 
@@ -28,9 +28,9 @@ javac -version
 
 ## Files
 
-- `Animal.java`
-- `Zoo.java`
-- `Main.java`
+- `tn/esprit/gestionzoo/entities/Animal.java`
+- `tn/esprit/gestionzoo/entities/Zoo.java`
+- `tn/esprit/gestionzoo/main/Main.java`
 
 ## Run
 
@@ -38,8 +38,8 @@ javac -version
 
 ```bash
 cd src
-javac *.java
-java Main
+javac tn/esprit/gestionzoo/entities/*.java tn/esprit/gestionzoo/main/*.java
+java tn.esprit.gestionzoo.main.Main
 ```
 
 ## Output

@@ -1,20 +1,25 @@
+package tn.esprit.gestionzoo.entities;
 public class Zoo
 {
-    Animal[] animals;
-    String name;
-    String city;
-    final int nbrCages = 25;
-    int animalCount;
+    private Animal[] animals;
+    private String name;
+    private String city;
+    private final int nbrCages = 25;
+    private int animalCount;
     public Zoo(String name,String city)
     {
-        this.name=name;
-        this.city=city;
-        this.animals=new Animal[nbrCages];
-        this.animalCount=0;
+        if(name == null || name.isEmpty())
+            this.name = "Unknown";
+        else
+            this.name = name;
+
+        this.city = city;
+        this.animals = new Animal[nbrCages];
+        this.animalCount = 0;
     }
     public Zoo()
     {
-        this("","");
+        this("Unknown","");
     }
     public void displayZoo()
     {
@@ -27,7 +32,7 @@ public class Zoo
     public int searchAnimal(String name)
     {
         for(int i=0;i<animalCount;i++)
-            if(animals[i].name.equals(name)) return i;
+            if(animals[i].getName().equals(name)) return i;
         return -1;
     }
     public boolean isZooFull()
@@ -36,17 +41,19 @@ public class Zoo
     }
     public boolean addAnimal(Animal a)
     {
-        if(isZooFull()||searchAnimal(a.name)!=-1) return false;
-        animals[animalCount++]=a;
+        if(isZooFull() || searchAnimal(a.getName())!=-1) return false;
+        animals[animalCount++] = a;
         return true;
     }
     public boolean removeAnimal(String name)
     {
-        int i=searchAnimal(name);
+        int i = searchAnimal(name);
         if(i==-1) return false;
+
         for(int j=i;j<animalCount-1;j++)
-            animals[j]=animals[j+1];
-        animals[--animalCount]=null;
+            animals[j] = animals[j+1];
+
+        animals[--animalCount] = null;
         return true;
     }
     public void displayAnimals()
@@ -57,5 +64,17 @@ public class Zoo
     public static Zoo compareZoo(Zoo z1,Zoo z2)
     {
         return z1.animalCount>z2.animalCount?z1:z2;
+    }
+    public String getName()
+    {
+        return name;
+    }
+    public String getCity()
+    {
+        return city;
+    }
+    public int getAnimalCount()
+    {
+        return animalCount;
     }
 }
