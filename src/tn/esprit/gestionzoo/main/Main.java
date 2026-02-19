@@ -1,6 +1,5 @@
 package tn.esprit.gestionzoo.main;
-import tn.esprit.gestionzoo.entities.Animal;
-import tn.esprit.gestionzoo.entities.Zoo;
+import tn.esprit.gestionzoo.entities.*;
 public class Main
 {
     public static void main(String[] args)
@@ -20,5 +19,17 @@ public class Main
         zoo1.displayAnimals();
         zoo2.addAnimal(lion);
         System.out.println(Zoo.compareZoo(zoo1,zoo2));
+        /*Prosit 05*/
+        Aquatic aquatic = new Aquatic("arthropoda", "crab", 2, false, "lagoon");
+        Terrestrial terrestrial = new Terrestrial("equidae", "zebra", 6, true, 4);
+        Dauphin dolphin = new Dauphin("delphinidae", "wave", 9, true, "atlantic", 58.4f);
+        Pingouin penguin = new Pingouin("spheniscidae", "frost", 3, false, "arctic coast", 22.1f);
+        System.out.println(aquatic);
+        System.out.println(terrestrial);
+        System.out.println(dolphin);
+        System.out.println(penguin);
+        aquatic.swim();
+        dolphin.swim();
+        penguin.swim();
     }
 }

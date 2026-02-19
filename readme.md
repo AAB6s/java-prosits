@@ -1,4 +1,4 @@
-# Java Prosit 4 – Zoo Management
+# Java Prosit 5 – Zoo Management
 
 ![Java](https://img.shields.io/badge/Java-JDK%2017-orange)
 
@@ -29,6 +29,10 @@ javac -version
 ## Files
 
 - `tn/esprit/gestionzoo/entities/Animal.java`
+- `tn/esprit/gestionzoo/entities/Aquatic.java`
+- `tn/esprit/gestionzoo/entities/Dauphin.java`
+- `tn/esprit/gestionzoo/entities/Penguin.java`
+- `tn/esprit/gestionzoo/entities/Terrestrial.java`
 - `tn/esprit/gestionzoo/entities/Zoo.java`
 - `tn/esprit/gestionzoo/main/Main.java`
 
