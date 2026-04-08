@@ -4,20 +4,25 @@ public class Zoo
     private Animal[] animals;
     private String name;
     private String city;
-    private final int nbrCages = 25;
+    private int nbrCages;
     private int animalCount;
     private Aquatic[] aquaticAnimals = new Aquatic[10];
     private int aquaticCount;
-    public Zoo(String name,String city)
+    public Zoo(String name,String city, int nbrCages)
     {
         if(name == null || name.isEmpty())
             this.name = "";
         else
             this.name = name;
         this.city = city;
+        this.nbrCages = nbrCages;
         this.animals = new Animal[nbrCages];
         this.animalCount = 0;
         this.aquaticCount = 0;
+    }
+    public Zoo(String name,String city)
+    {
+        this(name, city, 25);
     }
     public Zoo(){}
     public void displayZoo()
@@ -38,11 +43,15 @@ public class Zoo
     {
         return animalCount==nbrCages;
     }
-    public boolean addAnimal(Animal a)
+    public void addAnimal(Animal a) throws ZooFullException, InvalidAgeException
     {
-        if(isZooFull() || searchAnimal(a.getName())!=-1) return false;
+        if(a.getAge() < 0) {
+            throw new InvalidAgeException();
+        }
+        if(isZooFull()) {
+            throw new ZooFullException();
+        }
         animals[animalCount++] = a;
-        return true;
     }
     public boolean removeAnimal(String name)
     {

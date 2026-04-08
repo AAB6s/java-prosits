@@ -9,12 +9,7 @@ public class Animal
     {
         this.family = family;
         this.name = name;
-
-        if(age < 0)
-            this.age = 0;
-        else
-            this.age = age;
-
+        this.age = age;
         this.isMammal = isMammal;
     }
     public Animal()
