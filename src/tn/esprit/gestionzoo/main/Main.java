@@ -4,10 +4,8 @@ public class Main
 {
     public static void main(String[] args)
     {
-        // Test Prosit 7: Exception Handling
         Zoo zoo1=new Zoo("esprit zoo","tunis", 3);
 
-        // Test 1: Valid animals
         System.out.println("=== Test 1: Adding valid animals ===");
         Animal lion=new Animal("felidae","lion",5,true);
         try {
@@ -33,7 +31,6 @@ public class Main
             System.out.println("Error: " + e.getMessage());
         }
 
-        // Test 2: Animal with negative age
         System.out.println("\n=== Test 2: Adding animal with negative age ===");
         Animal bear=new Animal("ursidae","bear",-3,true);
         try {
@@ -46,7 +43,6 @@ public class Main
             System.out.println("Error: " + e.getMessage());
         }
 
-        // Test 3: Exceed zoo capacity
         System.out.println("\n=== Test 3: Exceeding zoo capacity ===");
         Animal elephant=new Animal("elephantidae","elephant",10,true);
         try {
@@ -59,7 +55,6 @@ public class Main
             System.out.println("Error: " + e.getMessage());
         }
 
-        // Test with Aquatic animals
         System.out.println("\n=== Aquatic Animals ===");
         Zoo zoo2=new Zoo("friguia","sousse");
         Dauphin d1=new Dauphin("delphinidae","wave",5,true,"sea",40.5f);
