@@ -60,6 +60,15 @@ public class Employe implements Comparable<Employe>
         return Integer.compare(this.id, other.id);
     }
     @Override
+    public boolean equals(Object o) 
+    {
+        if (this == o) return true;
+        if (!(o instanceof Employe)) return false;
+        Employe employe = (Employe) o;
+        if (id != employe.id) return false;
+        return nom == null ? employe.nom == null : nom.equals(employe.nom);
+    }
+    @Override
     public String toString() 
     {
         return "Employe{" +
@@ -69,13 +78,5 @@ public class Employe implements Comparable<Employe>
                 ", nomDepartement='" + nomDepartement + '\'' +
                 ", grade=" + grade +
                 '}';
-    }
-    @Override
-    public boolean equals(Object o) 
-    {
-        if (this == o) return true;
-        if (!(o instanceof Employe)) return false;
-        Employe employe = (Employe) o;
-        return id == employe.id;
     }
 }
