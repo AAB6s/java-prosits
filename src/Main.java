@@ -1,31 +1,19 @@
-public class Main 
-{
-    public static void main(String[] args) 
-    {
-        SocieteArrayList societe = new SocieteArrayList();
-        Employe e1 = new Employe(3, "Ben Ali", "Ahmed", "IT", 2);
-        Employe e2 = new Employe(1, "Trabelsi", "Sarra", "RH", 1);
-        Employe e3 = new Employe(5, "Mansouri", "Youssef", "IT", 1);
-        Employe e4 = new Employe(2, "Jlassi", "Oumaima", "Finance", 3);
-        Employe e5 = new Employe(4, "Abid", "Meriem", "IT", 1);
-        societe.ajouterEmploye(e1);
-        societe.ajouterEmploye(e2);
-        societe.ajouterEmploye(e3);
-        societe.ajouterEmploye(e4);
-        societe.ajouterEmploye(e5);
-        societe.ajouterEmploye(new Employe(1, "Trabelsi", "Amine", "Commercial", 4));
-        System.out.println("Liste initiale :");
-        societe.displayEmploye();
-        System.out.println("\nRecherche par nom 'Abid' : " + societe.rechercherEmploye("Abid"));
-        System.out.println("Recherche employe e3 : " + societe.rechercherEmploye(e3));
-        System.out.println("\nTri par id :");
-        societe.trierEmployeParId();
-        societe.displayEmploye();
-        System.out.println("\nTri par departement et grade :");
-        societe.trierEmployeParNomDepartementEtGrade();
-        societe.displayEmploye();
-        System.out.println("\nSuppression de e2 :");
-        societe.supprimerEmploye(e2);
-        societe.displayEmploye();
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+        ProductManagement pm = new ProductManagement();
+        List<Product> products = new ArrayList<>();
+        products.add(new Product(3, "Clavier", 45.5));
+        products.add(new Product(1, "Souris", 20));
+        products.add(new Product(2, "Ecran", 350));
+        products.add(pm.createProduct(() -> new Product(4, "Casque", 80)));
+        pm.displayProducts(products, System.out::println);
+        System.out.println(pm.returnProductsNames(products, Product::getNom));
+        pm.displayProductsByFilter(products, p -> p.getPrix() >= 80, System.out::println);
+        pm.sortProductsById(products, Comparator.comparingInt(Product::getId)).forEach(System.out::println);
+        System.out.println(pm.convertToStream(products).count());
     }
 }
